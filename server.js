@@ -42,6 +42,17 @@ app.get(base + 'circles/field', (request, response) => {
     response.sendFile(__dirname + "/views/circles/field.html");
 });
 
+app.get(base + 'sticks', (request, response) => {
+    response.sendFile(__dirname + "/views/sticks/index.html");
+});
+
+app.get(base + 'sticks/line-follows-cursor', (request, response) => {
+    response.sendFile(__dirname + "/views/sticks/line-follows-cursor.html");
+});
+app.get(base + 'sticks/field', (request, response) => {
+    response.sendFile(__dirname + "/views/sticks/field.html");
+});
+
 /* -------------------------------------------------------------------------- */
 
 // MAGNETS

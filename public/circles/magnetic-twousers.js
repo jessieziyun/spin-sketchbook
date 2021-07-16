@@ -21,6 +21,7 @@ document.getElementById("startButton").addEventListener('click', function () {
     document.getElementById("info").style.display = "none";
     document.getElementById("startButton").style.display = "none";
     document.getElementById("info-button").style.display = "inline-block";
+    document.getElementById("solid").style.display = "none";
 });
 
 const W = window.innerWidth;
@@ -32,7 +33,7 @@ const game = {
     width: W, //400, //window.innerWidth-20,//1200,
     height: H, //600, //window.innerHeight-20, //800,
 };
-const radius = 40;
+const radius = W/4;
 let engine, circle;
 
 const canvas = document.createElement('canvas');

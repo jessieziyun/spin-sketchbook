@@ -10,6 +10,11 @@ body {
   padding: 0;
   background-color: rgb(242, 241, 241);
   height: 100%;
+
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
 }
 
 * {
@@ -49,10 +54,27 @@ h2 {
   left: 0;
 }
 
+#solid {
+  z-index: 2;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(242, 241, 241);
+}
+
 canvas {
   width: 100%;
   height: 100%;
   /* border: 2px solid red; */
+}
+
+#canvas {
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 #page-container {
@@ -103,7 +125,7 @@ canvas {
 }
 
 #startButton {
-  z-index: 2;
+  z-index: 5;
   border: 2px solid black;
   border-radius: 4px;
   width: 80px;

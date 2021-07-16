@@ -19,6 +19,7 @@ document.getElementById("startButton").addEventListener('click', function () {
   document.getElementById("info").style.display = "none";
   document.getElementById("startButton").style.display = "none";
   document.getElementById("info-button").style.display = "inline-block";
+  document.getElementById("solid").style.display = "none";
 });
 
 function init() {

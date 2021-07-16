@@ -14,14 +14,20 @@ var sticks = function (p) { // p could be any variable name
         p.strokeCap(p.SQUARE);
 
         p.push();
-        p.translate(W / 2 - 40, H / 4);
-        p.rotate(90);
+        p.translate(W / 2, H / 4);
+        // p.rotate(- p.PI / 2.5);
         p.line(-l, 0, l, 0);
         p.pop();
 
         p.push();
-        p.translate(W / 2 + 40, H / 4);
-        p.rotate(-90);
+        p.translate(W / 2 - 20, H / 4);
+        p.rotate(- p.PI / 2.5);
+        p.line(-l, 0, l, 0);
+        p.pop();
+
+        p.push();
+        p.translate(W / 2 + 20, H / 4);
+        p.rotate(p.PI / 2.5);
         p.line(-l, 0, l, 0);
         p.pop();
     };
@@ -39,4 +45,5 @@ var circles = function (p) { // p could be any variable name
         p.ellipse(W / 2, H / 4, 75, 75);
     };
 };
+
 var myp5 = new p5(circles, 'circles');

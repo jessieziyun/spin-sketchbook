@@ -1,13 +1,16 @@
-var button = document.getElementById('info-button'); 
+const button = document.getElementById('info-button'); 
 
 button.onclick = function() {
-    var div = document.getElementById('info');
+    const div = document.getElementById('info');
+    const solid = document.getElementById('solid');
     if (div.style.display !== 'none') {
         div.style.display = 'none';
+        solid.style.display = 'none';
         button.innerHTML = "i"
     }
     else {
         div.style.display = 'block';
+        solid.style.display = 'block';
         button.innerHTML = "&times;"
     }
 };

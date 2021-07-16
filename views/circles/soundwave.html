@@ -4,9 +4,6 @@
 <head>
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <script src="https://cdn.socket.io/3.1.3/socket.io.min.js"
-    integrity="sha384-cPwlPLvBTa3sKAgddT6krw0cJat7egBga3DJepJyrLl4Q9/5WLra3rrnMcyTyOnh" crossorigin="anonymous">
-  </script>
   <link rel="stylesheet" type="text/css" href="/styles/style.css">
 </head>
 
@@ -18,15 +15,17 @@
     </div>
     <div id="info" class="info-text">
       <p>
-        This sketch connects the circles on two connected devices, creating a magnetic force between them, attracting them to each other.
+        Circles react to microphone sound input.
       </p>
     </div>
     <div id="startButton">start</div>
     <div id="solid"></div>
+    <div id="canvas"></div>
   </div>
-  <script src="/third-party/matter.js"></script>
-  <script src="/circles/magnetic-twousers.js"></script>
   <script src="/styles/toggle-info.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.3/p5.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.2/addons/p5.sound.min.js"></script>
+  <script src="/circles/soundwave.js"></script>
 </body>
 
 </html>
