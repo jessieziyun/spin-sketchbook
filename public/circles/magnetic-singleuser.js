@@ -41,7 +41,7 @@ canvas.height = H;
 canvas.style.position = "absolute";
 canvas.style.top = "0";
 canvas.style.left = "0";
-canvas.style.zIndex = "0";
+canvas.style.zIndex = "1";
 document.body.appendChild(canvas);
 
 let userLong, userLat;

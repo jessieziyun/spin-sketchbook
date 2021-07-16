@@ -19,8 +19,8 @@ const options = {
 document.getElementById("startButton").addEventListener('click', function () {
     begPermission();
     document.getElementById("info").style.display = "none";
-  document.getElementById("startButton").style.display = "none";
-  document.getElementById("info-button").style.display = "inline-block";
+    document.getElementById("startButton").style.display = "none";
+    document.getElementById("info-button").style.display = "inline-block";
 });
 
 const W = window.innerWidth;
@@ -42,12 +42,10 @@ canvas.height = H;
 canvas.style.position = "absolute";
 canvas.style.top = "0";
 canvas.style.left = "0";
-canvas.style.zIndex = "0";
+canvas.style.zIndex = "1";
 document.body.appendChild(canvas);
 
 let userLong, userLat;
-
-
 
 function begPermission() {
     if (DeviceOrientationEvent.requestPermission) {
@@ -243,4 +241,15 @@ function success(pos) {
 
 function error(err) {
     console.warn(`ERROR(${err.code}): ${err.message}`);
+}
+
+document.addEventListener('keydown', logKey);
+
+function logKey(e) {
+    console.log("keydown");
+    const userinfo = {
+        lat: 51.459881,
+        long: -0.176175
+    };
+    socket.emit('userinfo', userinfo);
 }

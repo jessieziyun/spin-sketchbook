@@ -30,8 +30,8 @@ app.get(base + 'circles', (request, response) => {
     response.sendFile(__dirname + "/views/circles/index.html");
 });
 
-app.get(base + 'circles/magnetic', (request, response) => {
-    response.sendFile(__dirname + "/views/circles/magnetic.html");
+app.get(base + 'circles/magnetic-twousers', (request, response) => {
+    response.sendFile(__dirname + "/views/circles/magnetic-twousers.html");
 });
 
 app.get(base + 'circles/magnetic-singleuser', (request, response) => {
