@@ -39,6 +39,10 @@ const canvas = document.createElement('canvas');
 const ctx = canvas.getContext('2d');
 canvas.width = W;
 canvas.height = H;
+canvas.style.position = "absolute";
+canvas.style.top = "0";
+canvas.style.left = "0";
+canvas.style.zIndex = "0";
 document.body.appendChild(canvas);
 
 let userLong, userLat;
