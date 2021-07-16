@@ -1,6 +1,8 @@
 const W = window.innerWidth;
 const H = window.innerHeight;
-const radius = W / 16;
+const r = W / 128;
+const maxr = r * 8;
+const num = 24;
 
 let mic, fft;
 let userStart = false;
@@ -19,8 +21,17 @@ var sketch = p => {
             let spectrum = fft.analyze();
             p.fill(0);
 
-            for (i = 0; i < spectrum.length; i += 64) {
-                p.ellipse(i / 64 * radius + radius / 2, p.map(spectrum[i], 0, 255, H - H / 8, H - H / 5), radius - 6);
+            let vol = mic.getLevel();
+
+            const gridspace = (H - r * 4) / num;
+            for (let i = 0; i < num; i++) {
+                for (let j = 0; j < num; j++) {
+                    const xpos = i * gridspace + r;
+                    const ypos = j * gridspace + r + maxr;
+                    const distance = p.dist(xpos, ypos, W / 2, H / 2)
+                    const radius = p.map(distance, 0, W / 2, maxr * vol + r, r);
+                    p.ellipse(xpos, ypos, radius)
+                }
             }
         }
     };
