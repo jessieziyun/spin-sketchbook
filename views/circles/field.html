@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+
+  <link rel="stylesheet" type="text/css" href="/styles/style.css">
+
+  <script type="x-shader/x-vertex" id="vertexshader">
+    attribute float scale;
+    void main() {
+      vec4 mvPosition = modelViewMatrix * vec4( position, 1.0 );
+      gl_PointSize = scale * ( 300.0 / - mvPosition.z );
+      gl_Position = projectionMatrix * mvPosition;
+    }
+  </script>
+
+  <script type="x-shader/x-fragment" id="fragmentshader">
+    uniform vec3 color;
+    void main() {
+      if ( length( gl_PointCoord - vec2( 0.5, 0.5 ) ) > 0.475 ) discard;
+      gl_FragColor = vec4( color, 1.0 );
+    }
+  </script>
+
+</head>
+
+<body>
+  <div id="page-container" class="padded">
+    <div id="header" class="flex space-between">
+      <h1><a href="/circles">&lt;</a></h1>
+      <h1 id="info-button">i</h1>
+    </div>
+    <div id="info" class="flex space-between column">
+      <div class="info-text">
+        <p>
+          A field of undulating circles. Pan around to view.
+        </p>
+      </div>
+      <div id="startButton">start</div>
+    </div>
+  </div>
+  <div id="scene-container"></div>
+  <script src="/styles/toggle-info.js"></script>
+  <script type="module" src="/circles/field.js"></script>
+</body>
+
+</html>
