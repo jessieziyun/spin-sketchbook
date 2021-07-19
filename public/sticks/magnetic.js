@@ -33,7 +33,7 @@ const game = {
     width: W, //400, //window.innerWidth-20,//1200,
     height: H, //600, //window.innerHeight-20, //800,
 };
-const radius = W / 8;
+
 let engine, stick;
 let length = W * 0.6;
 let width = W / 24;

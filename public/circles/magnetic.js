@@ -33,7 +33,7 @@ const game = {
     width: W, //400, //window.innerWidth-20,//1200,
     height: H, //600, //window.innerHeight-20, //800,
 };
-const radius = W/4;
+const radius = W/6;
 let engine, circle;
 
 const canvas = document.createElement('canvas');
