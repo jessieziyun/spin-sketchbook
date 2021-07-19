@@ -38,6 +38,14 @@ app.get(base + 'circles/field', (request, response) => {
     response.sendFile(__dirname + "/views/circles/field.html");
 });
 
+app.get(base + 'circles/soundwave', (request, response) => {
+    response.sendFile(__dirname + "/views/circles/soundwave.html");
+});
+
+app.get(base + 'circles/radial-wave', (request, response) => {
+    response.sendFile(__dirname + "/views/circles/radial-wave.html");
+});
+
 app.get(base + 'sticks', (request, response) => {
     response.sendFile(__dirname + "/views/sticks/index.html");
 });
@@ -47,6 +55,10 @@ app.get(base + 'sticks/line-follows-cursor', (request, response) => {
 });
 app.get(base + 'sticks/field', (request, response) => {
     response.sendFile(__dirname + "/views/sticks/field.html");
+});
+
+app.get(base + 'sticks/three', (request, response) => {
+    response.sendFile(__dirname + "/views/sticks/three.html");
 });
 
 /* -------------------------------------------------------------------------- */
