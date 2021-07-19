@@ -50,6 +50,10 @@ app.get(base + 'circles/tilt-control', (request, response) => {
     response.sendFile(__dirname + "/views/circles/tilt-control.html");
 });
 
+app.get(base + 'circles/timer', (request, response) => {
+    response.sendFile(__dirname + "/views/circles/timer.html");
+});
+
 app.get(base + 'sticks', (request, response) => {
     response.sendFile(__dirname + "/views/sticks/index.html");
 });
