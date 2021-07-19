@@ -46,6 +46,10 @@ app.get(base + 'circles/radial-wave', (request, response) => {
     response.sendFile(__dirname + "/views/circles/radial-wave.html");
 });
 
+app.get(base + 'circles/tilt-control', (request, response) => {
+    response.sendFile(__dirname + "/views/circles/tilt-control.html");
+});
+
 app.get(base + 'sticks', (request, response) => {
     response.sendFile(__dirname + "/views/sticks/index.html");
 });
