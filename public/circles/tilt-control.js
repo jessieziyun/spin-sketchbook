@@ -22,7 +22,7 @@ const game = {
 }
 const radius = W / 8;
 let engine;
-let circle;
+let circles;
 
 document.getElementById("startButton").addEventListener('click', function () {
     begPermission();
@@ -48,7 +48,7 @@ function handleOrientation(event) {
     const y = event.beta; // In degree in the range [-180,180]
     const z = event.alpha; //??
 
-    const scale = 0.02;
+    const scale = 0.03;
     engine.world.gravity.y = y * scale;
     engine.world.gravity.x = x * scale;
 }
@@ -74,11 +74,16 @@ function init() {
     // create an engine
     engine = Engine.create();
 
-    circle = Bodies.circle(canvas.width / 2, 200, radius, {
-        restitution: 0.2
+    circles = Composites.stack(0, 0, 3, 1, 0, 0, function (x, y) {
+        return Bodies.circle(x, y, radius, {
+            render: {
+                restitution: 1,
+                fillStyle: 'black',
+            }
+        });
     });
 
-    World.add(engine.world, [circle]);
+    World.add(engine.world, [circles]);
 
     const wallSettings = {
         size: 2000,
@@ -105,10 +110,13 @@ function init() {
 
 function render() {
     window.requestAnimationFrame(render);
+    var bodies = Composite.allBodies(engine.world);
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-    ctx.beginPath();
-    ctx.arc(circle.position.x, circle.position.y, radius, 0, 2 * Math.PI, false);
-    ctx.fillStyle = '#1e1e1e';
-    ctx.fill();
+    for (var i = 0; i < bodies.length; i += 1) {
+        ctx.beginPath();
+        ctx.arc(bodies[i].position.x, bodies[i].position.y, radius, 0, 2 * Math.PI, false);
+        ctx.fillStyle = bodies[i].render.fillStyle;
+        ctx.fill();
+    }
 }
