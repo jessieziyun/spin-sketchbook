@@ -65,6 +65,10 @@ app.get(base + 'sticks/three', (request, response) => {
     response.sendFile(__dirname + "/views/sticks/three.html");
 });
 
+app.get(base + 'sticks/magnetic', (request, response) => {
+    response.sendFile(__dirname + "/views/sticks/magnetic.html");
+});
+
 /* -------------------------------------------------------------------------- */
 
 // MAGNETS
